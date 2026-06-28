@@ -64,8 +64,11 @@ function TaskForm({ fetchTasks, editingTask, setEditingTask }) {
 
   return (
     <form className="card shadow-lg p-4 mb-5" onSubmit={handleSubmit}>
-      <h4 className="mb-3">
-        {editingTask ? "Edit Task" : "Add New Task"}
+      <h4 className="text-primary mb-4">
+        {editingTask
+        ? "✏️ Update Task"
+        : "➕ Add New Task"}
+
       </h4>
 
       <input

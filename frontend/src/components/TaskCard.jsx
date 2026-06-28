@@ -1,5 +1,6 @@
 import API from "../services/api";
 import { toast } from "react-toastify";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 function TaskCard({ task, fetchTasks, setEditingTask }) {
 
@@ -17,7 +18,7 @@ function TaskCard({ task, fetchTasks, setEditingTask }) {
   };
 
   return (
-    <div className="card shadow-sm h-100">
+    <div className="card shadow-lg border-0 h-100">
       <div className="card-body">
   
         <h4>{task.title}</h4>
@@ -46,17 +47,17 @@ function TaskCard({ task, fetchTasks, setEditingTask }) {
         </p>
   
         <button
-          className="btn btn-warning me-2"
+          className="btn btn-warning w-100 mb-2"
           onClick={() => setEditingTask(task)}
         >
-          Edit
+          <FaEdit /> Edit
         </button>
   
         <button
-          className="btn btn-danger"
+          className="btn btn-danger w-100"
           onClick={deleteTask}
         >
-          Delete
+          <FaTrash /> Delete
         </button>
   
       </div>

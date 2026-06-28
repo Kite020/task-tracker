@@ -11,14 +11,19 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
   const [sortOrder, setSortOrder] = useState("Newest");
+  const [loading, setLoading] = useState(true);
 
   const fetchTasks = async () => {
     try {
+      setLoading(true);
+  
       const res = await API.get("/");
       setTasks(res.data);
     } catch (error) {
       console.error(error);
       toast.error("Failed to load tasks");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -34,7 +39,7 @@ function App() {
     <div className="container py-5">
       <div className="text-center mb-5">
 
-        <h1>📋 Task Tracker</h1>
+        <h1 className="display-4 fw-bold text-primary">📋 Task Tracker</h1>
 
         <p className="text-muted">
             Organize your work efficiently
@@ -82,6 +87,33 @@ function App() {
         </div>
       </div>
 
+      {loading ? (
+        <div className="text-center my-5">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+
+          <p className="mt-3">Loading Tasks...</p>
+        </div>
+      ) : (
+        <TaskList
+          tasks={tasks
+            .filter((task) =>
+              task.title.toLowerCase().includes(search.toLowerCase())
+            )
+            .filter((task) =>
+              filter === "All" ? true : task.status === filter
+            )
+            .sort((a, b) =>
+              sortOrder === "Newest"
+                ? new Date(b.createdAt) - new Date(a.createdAt)
+                : new Date(a.createdAt) - new Date(b.createdAt)
+            )}
+          fetchTasks={fetchTasks}
+          setEditingTask={setEditingTask}
+        />
+      )}
+
       <TaskList
         tasks={tasks
           .filter((task) =>
@@ -98,6 +130,17 @@ function App() {
         fetchTasks={fetchTasks}
         setEditingTask={setEditingTask}
       />
+
+      <footer className="text-center mt-5 text-muted">
+
+        <hr />
+
+        <p>
+            Built using React • Express • MongoDB • Node.js
+        </p>
+
+      </footer>
+
 
       <ToastContainer position="top-right" />
     </div>
