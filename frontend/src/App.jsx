@@ -114,23 +114,6 @@ function App() {
         />
       )}
 
-      <TaskList
-        tasks={tasks
-          .filter((task) =>
-            task.title.toLowerCase().includes(search.toLowerCase())
-          )
-          .filter((task) =>
-            filter === "All" ? true : task.status === filter
-          )
-          .sort((a, b) =>
-            sortOrder === "Newest"
-              ? new Date(b.createdAt) - new Date(a.createdAt)
-              : new Date(a.createdAt) - new Date(b.createdAt)
-          )}
-        fetchTasks={fetchTasks}
-        setEditingTask={setEditingTask}
-      />
-
       <footer className="text-center mt-5 text-muted">
 
         <hr />
