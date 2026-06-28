@@ -1,0 +1,36 @@
+body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.badge {
+  font-size: 14px;
+}
