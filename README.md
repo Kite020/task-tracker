@@ -192,7 +192,7 @@ VITE_API_URL=http://localhost:5001/api/tasks
 ### ➕ Add New Task
 
 <p align="center">
-  <img src="./screenshots/add-task.png" width="850">
+  <img src="./screenshots/home-form.png" width="850">
 </p>
 
 ---
@@ -200,7 +200,7 @@ VITE_API_URL=http://localhost:5001/api/tasks
 ### 📋 Task List
 
 <p align="center">
-  <img src="./screenshots/task-list.png" width="850">
+  <img src="./screenshots/sample-tasks.png" width="850">
 </p>
 
 ---
