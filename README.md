@@ -155,11 +155,11 @@ VITE_API_URL=http://localhost:5001/api/tasks
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | /api/tasks | Get all tasks |
-| GET | /api/tasks/:id | Get a single task |
-| POST | /api/tasks | Create a new task |
-| PUT | /api/tasks/:id | Update a task |
-| DELETE | /api/tasks/:id | Delete a task |
+| GET | `/api/tasks` | Retrieve all tasks |
+| GET | `/api/tasks/:id` | Retrieve a task by ID |
+| POST | `/api/tasks` | Create a new task |
+| PUT | `/api/tasks/:id` | Update an existing task |
+| DELETE | `/api/tasks/:id` | Delete a task |
 
 ---
 
@@ -189,16 +189,19 @@ VITE_API_URL=http://localhost:5001/api/tasks
 
 ## 📷 Screenshots
 
-You can add screenshots here after capturing your application.
+### ➕ Add New Task
 
-Example:
+<p align="center">
+  <img src="./screenshots/add-task.png" width="850">
+</p>
 
-```
-screenshots/
-    home.png
-    add-task.png
-    task-list.png
-```
+---
+
+### 📋 Task List
+
+<p align="center">
+  <img src="./screenshots/task-list.png" width="850">
+</p>
 
 ---
 
